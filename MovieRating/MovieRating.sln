@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingTest", "MovieRat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{E59A26BD-AA85-44A7-A5C6-418754426A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRating.UI.ConsoleApp", "MovieRating.UI.ConsoleApp\MovieRating.UI.ConsoleApp.csproj", "{A408CAFA-4460-432B-A838-1D2245221250}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "MovieRating.UI.ConsoleApp\ConsoleApp.csproj", "{A408CAFA-4460-432B-A838-1D2245221250}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
