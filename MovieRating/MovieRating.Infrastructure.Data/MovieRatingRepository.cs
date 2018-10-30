@@ -42,5 +42,11 @@ namespace MovieRating.Infrastructure.Data
         {
             return _jsonReader.ratings.Where(m => m.Movie == input).Average(m => m.Grade);
         }
+
+        //6
+        public int GetGradeFromMovie(int input1, int input2)
+        {
+            return _jsonReader.ratings.Where(m => m.Movie == input1 && m.Grade == input2).Count();
+        }
     }
 }

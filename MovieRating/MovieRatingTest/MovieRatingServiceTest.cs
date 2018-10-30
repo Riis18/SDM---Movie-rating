@@ -68,5 +68,16 @@ namespace MovieRatingTest
             Assert.Equal(result, averageMovieGrade);
         }
 
+        //6
+        [Theory]
+        [InlineData(10, 3, 2)]
+        [InlineData(12, 4, 3)]
+        [InlineData(7, 4, 1)]
+        [InlineData(6, 5, 0)]
+        public void MovieGivenCertainGrade(int input1, int input2, int result)
+        {
+            int movieGrade = movieRR.GetGradeFromMovie(input1, input2);
+            Assert.Equal(result, movieGrade);
+        }
     }
 }
