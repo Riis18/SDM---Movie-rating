@@ -2,7 +2,7 @@
 
 namespace MovieRating.Core.Entities
 {
-    public class MovieRating
+    public class MovieRatings
     {
         public int Reviewer { get; set; }
         public int Movie { get; set; }
