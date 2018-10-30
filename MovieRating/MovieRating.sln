@@ -7,13 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3CA4A020-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{18489DFC-8B95-4FFB-ABB2-E1AD9D29B8A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRating.Core", "MovieRating.Core\MovieRating.Core.csproj", "{AEE1BAA3-C371-43D0-A37C-58C2B4C933B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRating.Core", "MovieRating.Core\MovieRating.Core.csproj", "{AEE1BAA3-C371-43D0-A37C-58C2B4C933B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRating.Core.Entities", "MovieRating.Core.Entities\MovieRating.Core.Entities.csproj", "{C5400833-1B27-4E43-8DA6-0BC799662FE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRating.Core.Entities", "MovieRating.Core.Entities\MovieRating.Core.Entities.csproj", "{C5400833-1B27-4E43-8DA6-0BC799662FE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRating.Infrastructure.Data", "MovieRating.Infrastructure.Data\MovieRating.Infrastructure.Data.csproj", "{C99E973D-EAF7-4137-B563-565318BB7FFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRating.Infrastructure.Data", "MovieRating.Infrastructure.Data\MovieRating.Infrastructure.Data.csproj", "{C99E973D-EAF7-4137-B563-565318BB7FFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingTest", "MovieRatingTest\MovieRatingTest.csproj", "{CA93F825-B47C-4B66-96C6-297C6BDAFED8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingTest", "MovieRatingTest\MovieRatingTest.csproj", "{CA93F825-B47C-4B66-96C6-297C6BDAFED8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{E59A26BD-AA85-44A7-A5C6-418754426A29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "MovieRating.UI.ConsoleApp\ConsoleApp.csproj", "{A408CAFA-4460-432B-A838-1D2245221250}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,10 @@ Global
 		{CA93F825-B47C-4B66-96C6-297C6BDAFED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA93F825-B47C-4B66-96C6-297C6BDAFED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA93F825-B47C-4B66-96C6-297C6BDAFED8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A408CAFA-4460-432B-A838-1D2245221250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A408CAFA-4460-432B-A838-1D2245221250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A408CAFA-4460-432B-A838-1D2245221250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A408CAFA-4460-432B-A838-1D2245221250}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +53,7 @@ Global
 		{AEE1BAA3-C371-43D0-A37C-58C2B4C933B4} = {3CA4A020-8845-4719-BEBA-4947C3E25654}
 		{C5400833-1B27-4E43-8DA6-0BC799662FE1} = {3CA4A020-8845-4719-BEBA-4947C3E25654}
 		{C99E973D-EAF7-4137-B563-565318BB7FFB} = {18489DFC-8B95-4FFB-ABB2-E1AD9D29B8A9}
+		{A408CAFA-4460-432B-A838-1D2245221250} = {E59A26BD-AA85-44A7-A5C6-418754426A29}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E7138581-15A8-4A94-9FF8-F3D9353F7EA9}

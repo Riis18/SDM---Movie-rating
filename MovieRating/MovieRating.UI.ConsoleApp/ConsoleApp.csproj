@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MovieRating.Core.Entities\MovieRating.Core.Entities.csproj" />
     <ProjectReference Include="..\MovieRating.Core\MovieRating.Core.csproj" />
+    <ProjectReference Include="..\MovieRating.Infrastructure.Data\MovieRating.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>
