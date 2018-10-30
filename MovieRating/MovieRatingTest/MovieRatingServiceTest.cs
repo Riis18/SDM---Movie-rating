@@ -1,5 +1,6 @@
 using MovieRating.Infrastructure.Data;
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace MovieRatingTest
@@ -78,6 +79,21 @@ namespace MovieRatingTest
         {
             int movieGrade = movieRR.GetGradeFromMovie(input1, input2);
             Assert.Equal(result, movieGrade);
+        }
+
+        //7
+        [Fact]
+        //[InlineData(16)]
+        //[InlineData(49)]
+        public void MovieIdByHighestRate()
+        {
+            List<int> result = new List<int>()
+            {
+                16,
+                49
+            };
+            List<int> highestRate = movieRR.GetMovieWithHighestRate();
+            Assert.Equal(result, highestRate);
         }
     }
 }
