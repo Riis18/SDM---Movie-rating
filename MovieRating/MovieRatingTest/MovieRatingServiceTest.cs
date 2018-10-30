@@ -19,5 +19,17 @@ namespace MovieRatingTest
             int reviewsFromReviewer = movieRR.GetReviewsFromReviewer(input);
             Assert.Equal(result, reviewsFromReviewer);
         }
+
+        //2
+        [Theory]
+        [InlineData(1, 3.8)]
+        [InlineData(2, 3.4)]
+        [InlineData(3, 3.8)]
+        [InlineData(4, 4)]
+        public void AverageRateFromReviewer(int input, double result)
+        {
+            double averageRate = movieRR.GetAverageRateFromReviewers(input);
+            Assert.Equal(result, averageRate);
+        }
     }
 }
