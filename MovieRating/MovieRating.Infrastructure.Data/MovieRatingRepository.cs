@@ -29,5 +29,11 @@ namespace MovieRating.Infrastructure.Data
         {
             return _jsonReader.ratings.Where(r => r.Reviewer == input1 && r.Grade == input2).Count();
         }
+
+        //4
+        public int GetMovieReviewNumbers(int input)
+        {
+            return _jsonReader.ratings.Where(m => m.Movie == input).Count();
+        }
     }
 }

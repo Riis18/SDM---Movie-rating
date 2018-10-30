@@ -44,5 +44,17 @@ namespace MovieRatingTest
             Assert.Equal(result, givenGrade);
         }
 
+        //4
+        [Theory]
+        [InlineData(10, 2)]
+        [InlineData(12, 3)]
+        [InlineData(8, 2)]
+        [InlineData(3, 1)]
+        public void NumberMovieReviewed(int input, int result)
+        {
+            int movieReviewed = movieRR.GetMovieReviewNumbers(input);
+            Assert.Equal(result, movieReviewed);
+        }
+
     }
 }
