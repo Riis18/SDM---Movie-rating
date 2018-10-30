@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MovieRating.Core.Entities\MovieRating.Core.Entities.csproj" />
     <ProjectReference Include="..\MovieRating.Core\MovieRating.Core.csproj" />
+    <ProjectReference Include="..\MovieRating.Infrastructure.Data\MovieRating.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>
