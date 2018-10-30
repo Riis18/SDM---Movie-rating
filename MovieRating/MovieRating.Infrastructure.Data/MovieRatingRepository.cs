@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MovieRating.Infrastructure.Data
@@ -47,6 +48,14 @@ namespace MovieRating.Infrastructure.Data
         public int GetGradeFromMovie(int input1, int input2)
         {
             return _jsonReader.ratings.Where(m => m.Movie == input1 && m.Grade == input2).Count();
+        }
+
+        //7
+        public List<int> GetMovieWithHighestRate()
+        {
+            var maxValue = _jsonReader.ratings.Where(m => m.Grade == 5).GroupBy(m => m.Movie).Max(r => r.Count());
+            return _jsonReader.ratings.Where(m => m.Grade == 5).GroupBy(m => m.Movie).Where(r => r.Count() == maxValue)
+                .Select(k => k.Key).ToList();
         }
     }
 }
