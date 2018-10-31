@@ -20,7 +20,7 @@ namespace MovieRating.Core.ApplicationService.Impl
         //1
         public int GetReviewsFromReviewer(int input)
         {
-            return _jsonReader.ratings.Where(r => r.Reviewer == input).Count();
+            return _jsonReader.ratings.Count(r => r.Reviewer == input);
         }
 
         //2
@@ -32,13 +32,13 @@ namespace MovieRating.Core.ApplicationService.Impl
         //3
         public int GetGradesFromReviewer(int input1, int input2)
         {
-            return _jsonReader.ratings.Where(r => r.Reviewer == input1 && r.Grade == input2).Count();
+            return _jsonReader.ratings.Count(r => r.Reviewer == input1 && r.Grade == input2);
         }
 
         //4
         public int GetMovieReviewNumbers(int input)
         {
-            return _jsonReader.ratings.Where(m => m.Movie == input).Count();
+            return _jsonReader.ratings.Count(m => m.Movie == input);
         }
 
         //5
@@ -50,7 +50,7 @@ namespace MovieRating.Core.ApplicationService.Impl
         //6
         public int GetGradeFromMovie(int input1, int input2)
         {
-            return _jsonReader.ratings.Where(m => m.Movie == input1 && m.Grade == input2).Count();
+            return _jsonReader.ratings.Count(m => m.Movie == input1 && m.Grade == input2);
         }
 
         //7
@@ -76,12 +76,14 @@ namespace MovieRating.Core.ApplicationService.Impl
                 .Select(d => d.Key).ToList();
         }
 
+        //10
         public List<MovieRatings> GetMoviesReviewedByReviewer(int input)
         {
             return _jsonReader.ratings.Where(r => r.Reviewer == input).OrderByDescending(m => m.Grade)
                 .ThenByDescending(m => m.Date).ToList();
         }
 
+        //11
         public List<MovieRatings> GetReviewersForMovie(int input)
         {
             return _jsonReader.ratings.Where(m => m.Movie == input).OrderByDescending(r => r.Grade)
