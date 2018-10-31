@@ -1,13 +1,15 @@
 using MovieRating.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
+using MovieRating.Core.ApplicationService;
+using MovieRating.Core.ApplicationService.Impl;
 using Xunit;
 
 namespace MovieRatingTest
 {
     public class MovieRatingServiceTest
     {
-        private MovieRatingRepository movieRR = new MovieRatingRepository(new JsonRead("TestRatings.json"));
+        private IMovieRatingService movieRR = new MovieRatingService(new JsonRead("TestRatings.json"));
 
         //1
         [Theory]

@@ -1,10 +1,29 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MovieRating.Core.ApplicationService
 {
-    class IMovieRatingService
+    public interface IMovieRatingService
     {
+        //1
+        int GetReviewsFromReviewer(int input);
+
+        //2
+        double GetAverageRateFromReviewers(int input);
+
+        //3
+        int GetGradesFromReviewer(int input1, int input2);
+
+        //4
+        int GetMovieReviewNumbers(int input);
+
+        //5
+        double GetAverageMovieGrade(int input);
+
+        //6
+        int GetGradeFromMovie(int input1, int input2);
+
+        //7
+        List<int> GetMovieWithHighestRate();
+        
     }
 }
