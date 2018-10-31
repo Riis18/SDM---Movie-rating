@@ -28,5 +28,8 @@ namespace MovieRating.Core.ApplicationService
         //8
         List<int> GetReviewerWithMostReviews();
         
+        //9
+        List<int> GetMovieByRatedScore(int input);
+
     }
 }
