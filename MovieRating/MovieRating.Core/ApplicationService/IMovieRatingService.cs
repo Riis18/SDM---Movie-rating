@@ -25,5 +25,8 @@ namespace MovieRating.Core.ApplicationService
         //7
         List<int> GetMovieWithHighestRate();
         
+        //8
+        List<int> GetReviewerWithMostReviews();
+        
     }
 }

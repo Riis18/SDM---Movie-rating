@@ -59,5 +59,13 @@ namespace MovieRating.Core.ApplicationService.Impl
             return _jsonReader.ratings.Where(m => m.Grade == 5).GroupBy(m => m.Movie).Where(r => r.Count() == maxValue)
                 .Select(k => k.Key).ToList();
         }
+
+        //8
+        public List<int> GetReviewerWithMostReviews()
+        {
+            var maxValue = _jsonReader.ratings.GroupBy(r => r.Reviewer).Max(r => r.Count());
+            return _jsonReader.ratings.GroupBy(r => r.Reviewer).Where(r => r.Count() == maxValue).Select(k => k.Key)
+                .ToList();
+        }
     }
 }

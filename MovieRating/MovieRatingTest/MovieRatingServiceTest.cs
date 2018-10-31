@@ -97,5 +97,20 @@ namespace MovieRatingTest
             List<int> highestRate = movieRR.GetMovieWithHighestRate();
             Assert.Equal(result, highestRate);
         }
+        
+        //8
+        [Fact]
+        public void ReviewerWithMostReviews()
+        {
+            List<int> result = new List<int>()
+            {
+                6,
+                7
+                
+            };
+
+            List<int> reviewerWithMostReview = movieRR.GetReviewerWithMostReviews();
+            Assert.Equal(result, reviewerWithMostReview);
+        }
     }
 }
