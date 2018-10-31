@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MovieRating.Core.Entities;
 using MovieRating.Infrastructure.Data;
 
 namespace MovieRating.Core.ApplicationService.Impl
@@ -68,10 +69,23 @@ namespace MovieRating.Core.ApplicationService.Impl
                 .ToList();
         }
 
+        //9
         public List<int> GetMovieByRatedScore(int input)
         {
             return _jsonReader.ratings.GroupBy(m => m.Movie).OrderByDescending(d => d.Average(r => r.Grade)).Take(input)
                 .Select(d => d.Key).ToList();
+        }
+
+        public List<MovieRatings> GetMoviesReviewedByReviewer(int input)
+        {
+            return _jsonReader.ratings.Where(r => r.Reviewer == input).OrderByDescending(m => m.Grade)
+                .ThenByDescending(m => m.Date).ToList();
+        }
+
+        public List<MovieRatings> GetReviewersForMovie(int input)
+        {
+            return _jsonReader.ratings.Where(m => m.Movie == input).OrderByDescending(r => r.Grade)
+                .ThenByDescending(r => r.Date).ToList();
         }
     }
 }

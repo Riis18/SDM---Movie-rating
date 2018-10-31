@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using MovieRating.Core.Entities;
 
 namespace MovieRating.Core.ApplicationService
 {
@@ -30,6 +31,12 @@ namespace MovieRating.Core.ApplicationService
         
         //9
         List<int> GetMovieByRatedScore(int input);
+        
+        //10
+        List<MovieRatings> GetMoviesReviewedByReviewer(int input);
+        
+        //11
+        List<MovieRatings> GetReviewersForMovie(int input);
 
     }
 }

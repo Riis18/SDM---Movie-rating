@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using MovieRating.Core.ApplicationService;
 using MovieRating.Core.ApplicationService.Impl;
+using MovieRating.Core.Entities;
 using Xunit;
 
 namespace MovieRatingTest
@@ -130,5 +131,28 @@ namespace MovieRatingTest
             List<int> topMovie = movieRR.GetMovieByRatedScore(input);
             Assert.Equal(result, topMovie);
         }
+        
+        //10
+        [Theory]
+        [InlineData(1)]
+        public void MoviesReviewedByReviewer(int input)
+        {
+            List<MovieRatings> moviesReviewed = movieRR.GetMoviesReviewedByReviewer(input);
+            Assert.Equal(5, moviesReviewed.Count);
+            Assert.Equal(9, moviesReviewed[0].Movie);
+            Assert.Equal(8, moviesReviewed[2].Movie);
+        }
+        
+        //11
+        [Theory]
+        [InlineData(10)]
+        public void ReviewersForMovie(int input)
+        {
+            List<MovieRatings> reviewerForMovie = movieRR.GetReviewersForMovie(input);
+            Assert.Equal(2, reviewerForMovie[0].Reviewer);
+            Assert.Equal(1, reviewerForMovie[1].Reviewer);
+            
+        }
+        
     }
 }
