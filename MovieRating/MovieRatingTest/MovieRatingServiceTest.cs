@@ -1,13 +1,16 @@
 using MovieRating.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
+using MovieRating.Core.ApplicationService;
+using MovieRating.Core.ApplicationService.Impl;
+using MovieRating.Core.Entities;
 using Xunit;
 
 namespace MovieRatingTest
 {
     public class MovieRatingServiceTest
     {
-        private MovieRatingRepository movieRR = new MovieRatingRepository(new JsonRead("TestRatings.json"));
+        private IMovieRatingService movieRR = new MovieRatingService(new JsonRead("TestRatings.json"));
 
         //1
         [Theory]
@@ -95,5 +98,61 @@ namespace MovieRatingTest
             List<int> highestRate = movieRR.GetMovieWithHighestRate();
             Assert.Equal(result, highestRate);
         }
+        
+        //8
+        [Fact]
+        public void ReviewerWithMostReviews()
+        {
+            List<int> result = new List<int>()
+            {
+                6,
+                7
+                
+            };
+
+            List<int> reviewerWithMostReview = movieRR.GetReviewerWithMostReviews();
+            Assert.Equal(result, reviewerWithMostReview);
+        }
+        
+        //9
+        [Theory]
+        [InlineData(4)]
+        public void TopMoviesWithScore(int input)
+        {
+            List<int> result = new List<int>()
+            {
+                99,
+                16,
+                49,
+                658,
+                
+            };
+
+            List<int> topMovie = movieRR.GetMovieByRatedScore(input);
+            Assert.Equal(result, topMovie);
+        }
+        
+        //10
+        [Theory]
+        [InlineData(1)]
+        public void MoviesReviewedByReviewer(int input)
+        {
+            List<MovieRatings> moviesReviewed = movieRR.GetMoviesReviewedByReviewer(input);
+            Assert.Equal(5, moviesReviewed.Count);
+            Assert.Equal(9, moviesReviewed[0].Movie);
+            Assert.Equal(8, moviesReviewed[2].Movie);
+        }
+        
+        //11
+        [Theory]
+        [InlineData(10)]
+        public void ReviewersForMovie(int input)
+        {
+            List<MovieRatings> reviewerForMovie = movieRR.GetReviewersForMovie(input);
+            Assert.Equal(2, reviewerForMovie[0].Reviewer);
+            Assert.Equal(1, reviewerForMovie[1].Reviewer);
+            
+        }
+        
     }
 }
